@@ -30,5 +30,6 @@ data class AuthResponseDto(
 
 @Serializable
 data class ErrorDto(
-    val mensaje: String
+    val mensaje: String,
+    val errores: List<String>? = null
 )
