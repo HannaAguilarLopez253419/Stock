@@ -6,12 +6,15 @@ import com.hann.shopu3.StationeryInventory.Datos.Fuentededatos.AuthInterceptor
 import com.hann.shopu3.StationeryInventory.Datos.Fuentededatos.ProductApiService
 import com.hann.shopu3.StationeryInventory.Datos.Fuentededatos.SessionStorage
 import com.hann.shopu3.StationeryInventory.Datos.Fuentededatos.SharedPreferencesSessionStorage
+import com.hann.shopu3.StationeryInventory.Datos.Repositorio.AuthRepository
+import com.hann.shopu3.StationeryInventory.Datos.Repositorio.AuthRepositoryImpl
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
+import kotlin.getValue
 
 class AppContainer(context: Context) {
 
@@ -43,4 +46,8 @@ class AppContainer(context: Context) {
 
     val authApiService: AuthApiService by lazy { retrofit.create(AuthApiService::class.java) }
     val productApiService: ProductApiService by lazy { retrofit.create(ProductApiService::class.java) }
+
+    val authRepository: AuthRepository by lazy {
+        AuthRepositoryImpl(authApiService, sessionStorage, json)
+    }
 }
