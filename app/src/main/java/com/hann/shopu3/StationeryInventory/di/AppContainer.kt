@@ -21,8 +21,8 @@ import kotlin.getValue
 
 class AppContainer(context: Context) {
 
-    // 10.0.2.2 es la forma en que el emulador llega a tu computadora
-    private val baseUrl = "http://10.0.2.2:3000/"
+    // API desplegada en AWS (HTTPS con Caddy)
+    private val baseUrl = "https://api-inventario-pape.duckdns.org/"
 
     private val json = Json { ignoreUnknownKeys = true }
 
