@@ -11,6 +11,7 @@ import com.hann.shopu3.StationeryInventory.Datos.Repositorio.AuthRepositoryImpl
 import com.hann.shopu3.StationeryInventory.Datos.Repositorio.ProductRepository
 import com.hann.shopu3.StationeryInventory.Datos.Repositorio.ProductRepositoryImpl
 import com.hann.shopu3.StationeryInventory.Presentacion.Viewmodels.AuthViewModelFactory
+import com.hann.shopu3.StationeryInventory.Presentacion.viewmodels.ProductViewModelFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -59,4 +60,6 @@ class AppContainer(context: Context) {
     val authViewModelFactory: AuthViewModelFactory by lazy {
         AuthViewModelFactory(authRepository)
     }
+    fun productViewModelFactory(productId: Int? = null): ProductViewModelFactory =
+        ProductViewModelFactory(productRepository, productId)
 }

@@ -18,3 +18,4 @@ fun Throwable.toApiException(json: Json): ApiException = when (this) {
     is IOException -> ApiException(null, "No se pudo conectar con el servidor. Revisa tu conexión")
     else -> ApiException(null, message ?: "Error inesperado")
 }
+fun Throwable.isUnauthorized(): Boolean = this is ApiException && code == 401
