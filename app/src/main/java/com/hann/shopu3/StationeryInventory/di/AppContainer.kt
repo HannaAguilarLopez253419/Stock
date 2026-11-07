@@ -35,7 +35,7 @@ class AppContainer(context: Context) {
         OkHttpClient.Builder()
             .addInterceptor(AuthInterceptor(sessionStorage))
             .addInterceptor(
-                HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
+                HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.NONE }
             )
             .build()
     }
