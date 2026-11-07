@@ -21,7 +21,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            manifestPlaceholders["usesCleartext"] = "true"
+        }
         release {
+            manifestPlaceholders["usesCleartext"] = "false"
             optimization {
                 enable = false
             }
