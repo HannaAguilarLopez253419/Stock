@@ -1,4 +1,4 @@
-package com.hann.shopu3.StationeryInventory.Presentacion.pantallas
+package com.hann.shopu3.StationeryInventory.Presentacion.Pantallas
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -41,8 +41,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.hann.shopu3.StationeryInventory.Datos.modelo.Product
 import com.hann.shopu3.StationeryInventory.Presentacion.Componentes.ErrorState
-import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProductListUiState
-import com.hann.shopu3.StationeryInventory.Presentacion.viewmodels.ProductListViewModel
+import com.hann.shopu3.StationeryInventory.Presentacion.Viewmodels.ProductListViewModel
 import com.hann.shopu3.StationeryInventory.ShopApplication
 
 @Composable

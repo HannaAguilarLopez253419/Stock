@@ -1,10 +1,7 @@
-package com.hann.shopu3.StationeryInventory.Presentacion.viewmodels
-
+package com.hann.shopu3.StationeryInventory.Presentacion.Viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.hann.shopu3.StationeryInventory.Datos.Repositorio.ProductRepository
-import com.hann.shopu3.StationeryInventory.Presentacion.Viewmodels.ProductDetailViewModel
-import com.hann.shopu3.StationeryInventory.Presentacion.Viewmodels.ProductFormViewModel
 
 class ProductViewModelFactory(
     private val productRepository: ProductRepository,

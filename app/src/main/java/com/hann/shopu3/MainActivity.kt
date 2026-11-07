@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import com.hann.shopu3.StationeryInventory.Presentacion.navigation.AppNavHost
-import com.hann.shopu3.StationeryInventory.Presentacion.navigation.Routes
+import com.hann.shopu3.StationeryInventory.Presentacion.Navigation.AppNavHost
+import com.hann.shopu3.StationeryInventory.Presentacion.Navigation.Routes
 import com.hann.shopu3.StationeryInventory.ShopApplication
 import com.hann.shopu3.ui.theme.ShopU3Theme
 

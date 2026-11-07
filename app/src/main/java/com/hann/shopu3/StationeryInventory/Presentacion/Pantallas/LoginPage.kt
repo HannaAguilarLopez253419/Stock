@@ -1,4 +1,4 @@
-package com.hann.shopu3.StationeryInventory.Presentacion.pantallas
+package com.hann.shopu3.StationeryInventory.Presentacion.Pantallas
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

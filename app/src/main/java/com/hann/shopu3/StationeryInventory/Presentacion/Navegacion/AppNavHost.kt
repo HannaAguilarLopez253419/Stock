@@ -1,4 +1,4 @@
-package com.hann.shopu3.StationeryInventory.Presentacion.navigation
+package com.hann.shopu3.StationeryInventory.Presentacion.Navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
@@ -8,11 +8,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.hann.shopu3.StationeryInventory.Presentacion.pantallas.LoginPage
-import com.hann.shopu3.StationeryInventory.Presentacion.pantallas.ProductDetailPage
-import com.hann.shopu3.StationeryInventory.Presentacion.pantallas.ProductFormPage
-import com.hann.shopu3.StationeryInventory.Presentacion.pantallas.ProductListPage
-import com.hann.shopu3.StationeryInventory.Presentacion.pantallas.RegisterPage
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.LoginPage
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProductDetailPage
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProductFormPage
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProductListPage
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.RegisterPage
 import com.hann.shopu3.StationeryInventory.ShopApplication
 
 object Routes {
