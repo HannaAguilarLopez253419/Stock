@@ -10,6 +10,7 @@ import com.hann.shopu3.StationeryInventory.Datos.Repositorio.AuthRepository
 import com.hann.shopu3.StationeryInventory.Datos.Repositorio.AuthRepositoryImpl
 import com.hann.shopu3.StationeryInventory.Datos.Repositorio.ProductRepository
 import com.hann.shopu3.StationeryInventory.Datos.Repositorio.ProductRepositoryImpl
+import com.hann.shopu3.StationeryInventory.Presentacion.Viewmodels.AuthViewModelFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -54,5 +55,8 @@ class AppContainer(context: Context) {
     }
     val productRepository: ProductRepository by lazy {
         ProductRepositoryImpl(productApiService, json)
+    }
+    val authViewModelFactory: AuthViewModelFactory by lazy {
+        AuthViewModelFactory(authRepository)
     }
 }
