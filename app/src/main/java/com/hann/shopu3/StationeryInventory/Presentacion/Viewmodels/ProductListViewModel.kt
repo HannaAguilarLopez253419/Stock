@@ -3,7 +3,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hann.shopu3.StationeryInventory.Datos.Repositorio.ProductRepository
 import com.hann.shopu3.StationeryInventory.Datos.Repositorio.isUnauthorized
-import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProductListUiState
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.States.ProductListUiState
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

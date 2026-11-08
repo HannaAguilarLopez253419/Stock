@@ -1,4 +1,4 @@
-package com.hann.shopu3.StationeryInventory.Presentacion.Pantallas
+package com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.Pages
 
 
 import androidx.compose.foundation.BorderStroke
@@ -51,6 +51,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.hann.shopu3.StationeryInventory.Presentacion.Componentes.AppTopBar
 import com.hann.shopu3.StationeryInventory.Presentacion.Componentes.ErrorState
 import com.hann.shopu3.StationeryInventory.Presentacion.Componentes.StatusBarIcons
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.States.ProductDetailUiState
 import com.hann.shopu3.StationeryInventory.Presentacion.Viewmodels.ProductDetailViewModel
 import com.hann.shopu3.StationeryInventory.ShopApplication
 

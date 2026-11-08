@@ -1,4 +1,4 @@
-package com.hann.shopu3.StationeryInventory.Presentacion.Pantallas
+package com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.Pages
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -35,6 +35,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.hann.shopu3.StationeryInventory.Presentacion.Componentes.AppTopBar
 import com.hann.shopu3.StationeryInventory.Presentacion.Componentes.AuthTextField
 import com.hann.shopu3.StationeryInventory.Presentacion.Componentes.StatusBarIcons
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.States.ProductFormUiState
 import com.hann.shopu3.StationeryInventory.Presentacion.Viewmodels.ProductFormViewModel
 import com.hann.shopu3.StationeryInventory.ShopApplication
 

@@ -1,4 +1,4 @@
-package com.hann.shopu3.StationeryInventory.Presentacion.Pantallas
+package com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.Pages
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background

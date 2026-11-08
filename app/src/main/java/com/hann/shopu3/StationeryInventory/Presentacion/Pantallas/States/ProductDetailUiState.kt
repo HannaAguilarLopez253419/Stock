@@ -1,4 +1,4 @@
-package com.hann.shopu3.StationeryInventory.Presentacion.Pantallas
+package com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.States
 
 import com.hann.shopu3.StationeryInventory.Datos.modelo.Product
 

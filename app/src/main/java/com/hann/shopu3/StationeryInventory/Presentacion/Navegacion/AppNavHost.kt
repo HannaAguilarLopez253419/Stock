@@ -1,4 +1,4 @@
-package com.hann.shopu3.StationeryInventory.Presentacion.Navigation
+package com.hann.shopu3.StationeryInventory.Presentacion.Navegacion
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
@@ -28,14 +28,14 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.HomePage
-import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.LoginPage
-import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProductDetailPage
-import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProductFormPage
-import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProductListPage
-import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.RegisterPage
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.Pages.HomePage
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.Pages.LoginPage
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.Pages.ProductDetailPage
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.Pages.ProductFormPage
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.Pages.ProductListPage
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.Pages.RegisterPage
 import com.hann.shopu3.StationeryInventory.ShopApplication
-import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProfilePage
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.Pages.ProfilePage
 
 object Routes {
     const val LOGIN = "login"
