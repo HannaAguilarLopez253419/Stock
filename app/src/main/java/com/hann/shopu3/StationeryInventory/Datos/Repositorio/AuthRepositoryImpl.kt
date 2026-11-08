@@ -30,13 +30,22 @@ class AuthRepositoryImpl(
 
     override fun isLoggedIn(): Boolean = sessionStorage.getToken() != null
 
+    override fun getCurrentUser(): User? {
+        val id = sessionStorage.getUserId() ?: return null
+        val nombre = sessionStorage.getUserName() ?: return null
+        val correo = sessionStorage.getUserEmail() ?: return null
+        return User(id = id, nombre = nombre, correo = correo)
+    }
+
     override fun logout() = sessionStorage.clearSession()
 
     private suspend fun authenticate(call: suspend () -> AuthResponseDto): Result<User> {
         return try {
             val response = call()
+            val user = response.usuario.toDomain()
             sessionStorage.saveToken(response.token)
-            Result.success(response.usuario.toDomain())
+            sessionStorage.saveUser(user.id, user.nombre, user.correo)
+            Result.success(user)
         } catch (e: CancellationException) {
             throw e
         } catch (e: Exception) {
