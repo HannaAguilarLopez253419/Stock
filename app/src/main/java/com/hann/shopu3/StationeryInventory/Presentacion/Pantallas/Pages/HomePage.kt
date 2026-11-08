@@ -93,14 +93,6 @@ fun HomeContent(
     onRetry: () -> Unit,
     onLogout: () -> Unit
 ) {
-    // Un producto se considera con stock bajo si tiene 5 unidades o menos
-    val lowStock = uiState.products
-        .filter { it.existencias <= 5 }
-        .sortedBy { it.existencias }
-        .take(3)
-    val totalUnits = uiState.products.sumOf { it.existencias }
-    val totalValue = uiState.products.sumOf { it.precio * it.existencias }
-
     Scaffold(
         containerColor = Color(0xFFFAF7FF),
         topBar = {
@@ -168,7 +160,7 @@ fun HomeContent(
                             modifier = Modifier.weight(1f),
                             icon = Icons.Filled.Check,
                             label = "Unidades en stock",
-                            value = totalUnits.toString()
+                            value = uiState.totalUnits.toString()
                         )
                     }
 
@@ -185,7 +177,7 @@ fun HomeContent(
                                 color = Color(0xFF5B5280)
                             )
                             Text(
-                                text = "\$%.2f".format(totalValue),
+                                text = "\$%.2f".format(uiState.totalValue),
                                 style = MaterialTheme.typography.headlineMedium,
                                 color = Color(0xFF1E1747),
                                 fontWeight = FontWeight.Bold
@@ -199,15 +191,18 @@ fun HomeContent(
                         color = Color(0xFF1E1747)
                     )
 
-                    if (lowStock.isEmpty()) {
+                    if (uiState.lowStockProducts.isEmpty()) {
                         Text(
                             text = "Todo en orden: no hay productos con stock bajo.",
                             style = MaterialTheme.typography.bodyLarge,
                             color = Color(0xFF5B5280)
                         )
                     } else {
-                        lowStock.forEach { product ->
-                            LowStockItem(product = product, onClick = { onProductClick(product.id) })
+                        uiState.lowStockProducts.forEach { product ->
+                            LowStockItem(
+                                product = product,
+                                onClick = { onProductClick(product.id) }
+                            )
                         }
                     }
 
