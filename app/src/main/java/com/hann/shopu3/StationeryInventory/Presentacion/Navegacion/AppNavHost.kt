@@ -35,6 +35,7 @@ import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProductFormPag
 import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProductListPage
 import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.RegisterPage
 import com.hann.shopu3.StationeryInventory.ShopApplication
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProfilePage
 
 object Routes {
     const val LOGIN = "login"
@@ -159,7 +160,7 @@ fun AppNavHost(
             }
 
             composable(Routes.PROFILE) {
-                TemporaryScreen("Perfil")
+                ProfilePage(onLogout = logout)
             }
 
             composable(
