@@ -8,11 +8,16 @@ import com.hann.shopu3.StationeryInventory.Presentacion.Navigation.AppNavHost
 import com.hann.shopu3.StationeryInventory.Presentacion.Navigation.Routes
 import com.hann.shopu3.StationeryInventory.ShopApplication
 import com.hann.shopu3.ui.theme.ShopU3Theme
+import android.graphics.Color
+import androidx.activity.SystemBarStyle
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT),
+            navigationBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT)
+        )
 
         val container = (application as ShopApplication).container
         val startDestination =

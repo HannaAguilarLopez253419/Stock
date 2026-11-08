@@ -54,7 +54,6 @@ fun ProductDetailPage(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }
 
-    // Al volver de editar, se recarga y muestra los datos nuevos
     LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { viewModel.loadProduct() }
 
     LaunchedEffect(uiState.isDeleted) {
