@@ -28,6 +28,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.HomePage
 import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.LoginPage
 import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProductDetailPage
 import com.hann.shopu3.StationeryInventory.Presentacion.Pantallas.ProductFormPage
@@ -74,8 +75,8 @@ fun AppNavHost(
         }
     }
 
-    val goToProducts: () -> Unit = {
-        navController.navigate(Routes.PRODUCTS) {
+    val goToHome: () -> Unit = {
+        navController.navigate(Routes.HOME) {
             popUpTo(navController.graph.id) { inclusive = true }
         }
     }
@@ -95,7 +96,7 @@ fun AppNavHost(
                             selected = currentRoute == tab.route,
                             onClick = {
                                 navController.navigate(tab.route) {
-                                    popUpTo(Routes.PRODUCTS) { inclusive = false }
+                                    popUpTo(Routes.HOME) { inclusive = false }
                                     launchSingleTop = true
                                 }
                             },
@@ -122,20 +123,30 @@ fun AppNavHost(
 
             composable(Routes.LOGIN) {
                 LoginPage(
-                    onLoginSuccess = goToProducts,
+                    onLoginSuccess = goToHome,
                     onGoToRegister = { navController.navigate(Routes.REGISTER) }
                 )
             }
 
             composable(Routes.REGISTER) {
                 RegisterPage(
-                    onRegisterSuccess = goToProducts,
+                    onRegisterSuccess = goToHome,
                     onGoToLogin = { navController.popBackStack() }
                 )
             }
 
             composable(Routes.HOME) {
-                TemporaryScreen("Inicio")
+                HomePage(
+                    onGoToProducts = {
+                        navController.navigate(Routes.PRODUCTS) {
+                            popUpTo(Routes.HOME) { inclusive = false }
+                            launchSingleTop = true
+                        }
+                    },
+                    onProductClick = { navController.navigate(Routes.detail(it)) },
+                    onLogout = logout,
+                    onSessionExpired = logout
+                )
             }
 
             composable(Routes.PRODUCTS) {
@@ -186,7 +197,6 @@ fun AppNavHost(
     }
 }
 
-// Pantalla provisional: se reemplaza en los pasos siguientes
 @Composable
 private fun TemporaryScreen(title: String) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {

@@ -21,8 +21,7 @@ class MainActivity : ComponentActivity() {
 
         val container = (application as ShopApplication).container
         val startDestination =
-            if (container.authRepository.isLoggedIn()) Routes.PRODUCTS else Routes.LOGIN
-
+            if (container.authRepository.isLoggedIn()) Routes.HOME else Routes.LOGIN
         setContent {
             ShopU3Theme {
                 AppNavHost(startDestination = startDestination)
